@@ -1,8 +1,8 @@
 name: interactor
 description: A library to provide EventBus and Interactor into Flutter app
 version: 0.0.1
-author: timnew
 homepage: https://github.com/timnew/flutter-interactor/
+repository: https://github.com/timnew/flutter-interactor/
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
