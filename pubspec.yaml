@@ -1,0 +1,20 @@
+name: event_bus
+description: A library to provide EventBus and Interactor into Flutter app
+version: 0.0.1
+author: timnew
+homepage:
+
+environment:
+  sdk: '>=2.1.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  mockito: ^4.1.1
+
+flutter:
