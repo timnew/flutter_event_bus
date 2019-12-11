@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:event_bus/event_bus.dart';
+import 'package:interactor/interactor.dart';
 
 void main() {
   group("EventBus", () {
