@@ -1,4 +1,4 @@
-# Flutter Event Bus
+# flutter_event_bus 0.0.1
 
 Flutter Event Bus is an `EventBus` designed specific for Flutter app, which enable developer to write flutter app with Interactor pattern, which is similar to Bloc but less structured on some aspect.
 
@@ -178,3 +178,7 @@ class _MyPageInteractor extends Interactor<MyHomePage> {
   }
 }
 ```
+
+## License
+
+The MIT License (MIT)
