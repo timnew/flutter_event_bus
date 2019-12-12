@@ -120,6 +120,6 @@ class _MyHomePageState extends Interactor<MyHomePage> {
   }
 
   @override
-  Subscription subscribeEvents() =>
+  Subscription subscribeEvents(EventBus eventBus) =>
       eventBus.respond<InreaseCounterEvent>(_incrementCounter);
 }
