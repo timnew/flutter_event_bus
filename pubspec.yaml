@@ -2,7 +2,6 @@ name: flutter_event_bus
 description: |
   A library to provide EventBus and Interactor to Flutter app.
   It enables developer to write flutter app with Interactor pattern.
-  Interactor pattern is a pattern similar to bloc, but with less structure and restriction
 version: 0.0.2
 homepage: https://github.com/timnew/flutter_event_bus/
 repository: https://github.com/timnew/flutter_event_bus/
