@@ -17,5 +17,5 @@ class EventBusWidget extends InheritedWidget {
       eventBus != oldWidget.eventBus;
 
   static EventBusWidget of(BuildContext context) =>
-      context.inheritFromWidgetOfExactType(EventBusWidget) as EventBusWidget;
+      context.dependOnInheritedWidgetOfExactType<EventBusWidget>();
 }
