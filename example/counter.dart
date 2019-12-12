@@ -1,4 +1,4 @@
-import 'package:interactor/interactor.dart';
+import 'package:flutter_event_bus/flutter_event_bus.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
