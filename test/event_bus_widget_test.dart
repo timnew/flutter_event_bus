@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:interactor/interactor.dart';
+import 'package:flutter_event_bus/flutter_event_bus.dart';
 
 class ButtonPressedEvent {
   final String newText;
@@ -22,8 +22,13 @@ class TestInteractor extends Interactor<InteractorWidget> {
   Widget build(BuildContext context) => Text(_value, key: const Key("text"));
 
   @override
-  Subscription subscribeEvents() =>
-      eventBus.respond<ButtonPressedEvent>(this._onValueChanged);
+  Subscription subscribeEvents() => eventBus
+      .respond<ButtonPressedEvent>(this._onValueChanged)
+      .respond(this._logEvent);
+
+  void _logEvent(dynamic event) {
+    print("logEvent: $event");
+  }
 
   void _onValueChanged(ButtonPressedEvent event) {
     setState(() {
@@ -32,19 +37,21 @@ class TestInteractor extends Interactor<InteractorWidget> {
   }
 }
 
+class TestButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => RaisedButton(
+      child: const Text("Button"),
+      onPressed: () {
+        EventBus.publishTo(context, ButtonPressedEvent("Pressed"));
+      });
+}
+
 class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
           home: Scaffold(
               body: Row(
-        children: <Widget>[
-          InteractorWidget(),
-          FlatButton(
-              child: const Text("Button"),
-              onPressed: () {
-                EventBus.publishTo(context, ButtonPressedEvent("Pressed"));
-              })
-        ],
+        children: <Widget>[InteractorWidget(), TestButton()],
       )));
 }
 
@@ -54,7 +61,7 @@ void main() {
 
     expect(find.text("None"), findsOneWidget);
 
-    await tester.press(find.byType(FlatButton));
+    await tester.tap(find.byType(RaisedButton));
 
     await tester.pump();
 
