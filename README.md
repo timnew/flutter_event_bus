@@ -1,4 +1,7 @@
-# flutter_event_bus 0.0.1
+# flutter_event_bus
+
+[![Star this Repo](https://img.shields.io/github/stars/timnew/flutter_event_bus.svg?style=flat-square)](https://github.com/timnew/flutter_event_bus)
+[![Pub Package](https://img.shields.io/pub/v/flutter_event_bus.svg?style=flat-square)](https://pub.dev/packages/flutter_event_bus)
 
 Flutter Event Bus is an `EventBus` designed specific for Flutter app, which enable developer to write flutter app with Interactor pattern, which is similar to Bloc but less structured on some aspect.
 
