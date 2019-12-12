@@ -19,4 +19,4 @@ doc/api/
                  # project includes source files written in JavaScript.
 *.js_
 *.js.deps
-*.js.map
+*.js.mapdoc
