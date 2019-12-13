@@ -1,9 +1,14 @@
 library flutter_event_bus;
 
-export 'flutter_event_bus/EventBus.dart';
-export 'flutter_event_bus/EventBusWidget.dart';
-export 'flutter_event_bus/Interactor.dart';
-export 'flutter_event_bus/Responder.dart';
-export 'flutter_event_bus/Subscription.dart';
-export 'flutter_event_bus/RootInteractor.dart';
-export 'flutter_event_bus/StoreInteractor.dart';
+import 'dart:async';
+
+import 'package:flutter/widgets.dart';
+
+part 'EventBus.dart';
+part 'EventBusWidget.dart';
+part 'Responder.dart';
+part 'Subscription.dart';
+part 'Interactor.dart';
+part 'StoreWidgetBuilder.dart';
+part 'StoreInteractor.dart';
+part 'RootInteractor.dart';

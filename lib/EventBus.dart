@@ -1,10 +1,4 @@
-import 'dart:async';
-
-import 'package:flutter/widgets.dart';
-
-import 'EventBusWidget.dart';
-import 'Responder.dart';
-import 'Subscription.dart';
+part of 'flutter_event_bus.dart';
 
 /// Allow widgets to communicate to each other without direct coupling
 class EventBus {

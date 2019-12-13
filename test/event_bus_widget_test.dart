@@ -22,7 +22,7 @@ class TestInteractor extends Interactor<InteractorWidget> {
   Widget build(BuildContext context) => Text(_value, key: const Key("text"));
 
   @override
-  Subscription subscribeEvents() => eventBus
+  Subscription subscribeEvents(EventBus eventBus) => eventBus
       .respond<ButtonPressedEvent>(this._onValueChanged)
       .respond(this._logEvent);
 

@@ -1,6 +1,4 @@
-import 'package:flutter/widgets.dart';
-
-import '../flutter_event_bus.dart';
+part of 'flutter_event_bus.dart';
 
 /// Base class for the top level [Interactor] which should be used as the top widget
 /// RootInteractor will provide [EventBus] and [Store] to children widgets

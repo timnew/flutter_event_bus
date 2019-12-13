@@ -1,6 +1,4 @@
-import 'package:flutter/widgets.dart';
-
-import 'EventBus.dart';
+part of 'flutter_event_bus.dart';
 
 /// Widget to provide [EventBus] into child widget tree
 ///

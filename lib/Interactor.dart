@@ -1,7 +1,4 @@
-import 'package:flutter/widgets.dart';
-
-import 'EventBus.dart';
-import 'Subscription.dart';
+part of 'flutter_event_bus.dart';
 
 /// Base class for the busiess object that handles events that published on [EventBus].
 /// It should be used as base class to a [State] of a [StatefulWidget].

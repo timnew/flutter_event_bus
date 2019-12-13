@@ -1,10 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'package:flutter_event_bus/flutter_event_bus/Interactor.dart';
-
-/// The signature of StoreWidgetBuilder
-/// It returns a [ProxyWidget], who wraps up [child].
-/// Typically an [InheritedWidget] or [InheritedModel] should be returned
-typedef ProxyWidget StoreWidgetBuilder(BuildContext context, Widget child);
+part of 'flutter_event_bus.dart';
 
 abstract class StoreInteractor<T extends StatefulWidget> extends Interactor<T> {
   @override
