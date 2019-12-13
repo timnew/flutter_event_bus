@@ -14,6 +14,9 @@ class Subscription {
   /// Should barely used directly, to subscribe to event bus, use `EventBus.respond`.
   Subscription(this._stream);
 
+  /// Returns an instance that indicates there is no subscription
+  factory Subscription.empty() => const _EmptySubscription();
+
   Stream<T> _cast<T>() =>
       (T == dynamic) ? _stream : _stream.where((event) => event is T).cast<T>();
 
@@ -43,4 +46,27 @@ class Subscription {
     subscriptions.forEach((s) => s.cancel());
     subscriptions.clear();
   }
+}
+
+class _EmptySubscription implements Subscription {
+  static final emptyList = List.unmodifiable([]);
+
+  const _EmptySubscription();
+
+  @override
+  void dispose() {
+    subscriptions.clear();
+  }
+
+  @override
+  Subscription respond<T>(responder) => throw Exception("Not supported");
+
+  @override
+  List<StreamSubscription> get subscriptions => emptyList;
+
+  @override
+  Stream<T> _cast<T>() => throw Exception("Not supported");
+
+  @override
+  Stream get _stream => throw Exception("Not supported");
 }

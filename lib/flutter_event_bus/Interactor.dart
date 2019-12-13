@@ -55,6 +55,9 @@ abstract class Interactor<T extends StatefulWidget> extends State<T> {
   ///     .respond<EventA>(this._responderA)
   ///     .respond<EventB>(this._responderB);
   /// ```
+  ///
+  /// If there is absolutely no subscription in this interactor, an empty [Subscription] can be obtained
+  /// via `Subscription.empty()`.
   @protected
   Subscription subscribeEvents(EventBus eventBus);
 }
