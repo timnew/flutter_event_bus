@@ -155,7 +155,7 @@ class _MyPageInteractor extends Interactor<MyHomePage> {
   }
 
   @override
-  Subscription subscribeEvents() => eventBus
+  Subscription subscribeEvents(EventBus eventBus) => eventBus
     .respond<IncreaseCounterEvent>(_incrementCounter)
     .respond<DecreaseCounterEvent>(_decrementCounter);
 
