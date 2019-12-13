@@ -24,16 +24,16 @@ class EventBusWidget extends InheritedWidget {
 
   /// Default constructor that create a default [EventBus] and provided it to [child] widget and its children.
   /// A [key] can be provided if necessary
-  /// And [sync] can be used to control whether [EventBus] is `synchronized` or `asynchronized`, default to `asynchronized`.
-  EventBusWidget({Key key, @required Widget child, bool sync = false})
-      : eventBus = EventBus(sync: sync),
-        super(key: key, child: child);
-
-  /// Create widget with prebuilt [EventBus]
+  /// If [eventBus] is not given, a new [EventBus] is created, and [sync] is respected. [sync] decides the created event bus
+  /// is `synchronized` or `asynchronized`, default to `asynchronized`.
+  /// If [eventBus] is given, [sync] is ignored
   ///
-  /// Could be useful when you have want to provide an existing [EventBus] to children or you are using custom stream controller in EventBus
-  EventBusWidget.bindEventBus(this.eventBus, {@required Widget child})
-      : super(key: ObjectKey(eventBus), child: child);
+  /// The [eventBus] param chould be useful if you want to access eventBus from widget who hold [EventBusWidget],
+  /// or you are using custom [StreamController] in Event Bus.
+  EventBusWidget(
+      {Key key, @required Widget child, EventBus eventBus, bool sync = false})
+      : eventBus = eventBus ?? EventBus(sync: sync),
+        super(key: key, child: child);
 
   @override
   bool updateShouldNotify(EventBusWidget oldWidget) =>
