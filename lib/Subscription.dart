@@ -56,9 +56,7 @@ class _EmptySubscription implements Subscription {
   const _EmptySubscription();
 
   @override
-  void dispose() {
-    subscriptions.clear();
-  }
+  void dispose() {}
 
   @override
   Subscription respond<T>(responder) => throw Exception("Not supported");
