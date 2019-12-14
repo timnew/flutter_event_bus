@@ -1,6 +1,6 @@
 ## [0.0.3] - 2019-12-14
 
-- Added `ProxyInteractor`
+- Added `ProxyInteractor`, `BuilderInteractor`
 - Replace `EventBusWidget.bindEventBus` with `EventBusWidget` constructor
 - Added `Subscription.empty()`
 - Simplify file structure
