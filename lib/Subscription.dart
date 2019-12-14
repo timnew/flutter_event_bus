@@ -1,5 +1,7 @@
 import 'dart:async';
-import 'Responder.dart';
+
+/// The function/method signature for the event handler
+typedef void Responder<T>(T event);
 
 /// The class manages the subscription to event bus
 class Subscription {

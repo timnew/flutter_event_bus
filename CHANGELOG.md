@@ -1,9 +1,9 @@
 ## [0.0.3] - 2019-12-14
 
-- Added `StoreInteractor`
+- Added `ProxyInteractor`
 - Replace `EventBusWidget.bindEventBus` with `EventBusWidget` constructor
 - Added `Subscription.empty()`
-- Flatten file structure
+- Simplify file structure
 
 ## [0.0.2] - 2019-12-12
 
