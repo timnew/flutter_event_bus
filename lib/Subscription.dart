@@ -1,4 +1,5 @@
-part of 'flutter_event_bus.dart';
+import 'dart:async';
+import 'Responder.dart';
 
 /// The class manages the subscription to event bus
 class Subscription {

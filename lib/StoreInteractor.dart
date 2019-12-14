@@ -1,4 +1,6 @@
-part of 'flutter_event_bus.dart';
+import 'package:flutter/widgets.dart';
+import 'Interactor.dart';
+import 'StoreWidgetBuilder.dart';
 
 abstract class StoreInteractor<T extends StatefulWidget> extends Interactor<T> {
   @override

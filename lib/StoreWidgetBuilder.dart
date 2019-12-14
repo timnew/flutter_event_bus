@@ -1,4 +1,4 @@
-part of 'flutter_event_bus.dart';
+import 'package:flutter/widgets.dart';
 
 /// The signature of StoreWidgetBuilder
 /// It returns a [ProxyWidget], who wraps up [child].
