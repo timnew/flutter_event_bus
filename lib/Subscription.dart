@@ -50,7 +50,8 @@ class Subscription {
 }
 
 class _EmptySubscription implements Subscription {
-  static final emptyList = List.unmodifiable([]);
+  static final List<StreamSubscription> emptyList =
+      List.unmodifiable(<StreamSubscription>[]);
 
   const _EmptySubscription();
 
