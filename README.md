@@ -167,7 +167,7 @@ class _MyPageInteractor extends Interactor<MyHomePage> {
     });
   }
 
-   void _incrementCounter(DecreaseCounterEvent event) {
+   void _decrementCounter(DecreaseCounterEvent event) {
     setState(() {
       _counter--;
 
