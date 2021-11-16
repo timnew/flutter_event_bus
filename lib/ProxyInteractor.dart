@@ -4,7 +4,7 @@ import 'Interactor.dart';
 abstract class ProxyInteractorWidget extends StatefulWidget {
   final Widget child;
 
-  const ProxyInteractorWidget({Key key, @required this.child})
+  const ProxyInteractorWidget({Key? key, required this.child})
       : super(key: key);
 }
 

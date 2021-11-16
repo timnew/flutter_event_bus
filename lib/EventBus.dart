@@ -91,7 +91,7 @@ class EventBusWidget extends InheritedWidget {
   /// The [eventBus] param chould be useful if you want to access eventBus from widget who hold [EventBusWidget],
   /// or you are using custom [StreamController] in Event Bus.
   EventBusWidget(
-      {Key key, @required Widget child, EventBus eventBus, bool sync = false})
+      {Key? key, required Widget child, EventBus? eventBus, bool sync = false})
       : eventBus = eventBus ?? EventBus(sync: sync),
         super(key: key, child: child);
 
@@ -101,5 +101,5 @@ class EventBusWidget extends InheritedWidget {
 
   /// Find the closeset [EventBusWidget] from ancester tree.
   static EventBusWidget of(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<EventBusWidget>();
+      context.dependOnInheritedWidgetOfExactType<EventBusWidget>()!;
 }

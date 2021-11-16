@@ -39,7 +39,7 @@ class TestInteractor extends Interactor<InteractorWidget> {
 
 class TestButton extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => RaisedButton(
+  Widget build(BuildContext context) => ElevatedButton(
       child: const Text("Button"),
       onPressed: () {
         EventBus.publishTo(context, ButtonPressedEvent("Pressed"));
@@ -49,10 +49,10 @@ class TestButton extends StatelessWidget {
 class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
-          home: Scaffold(
-              body: Row(
-        children: <Widget>[InteractorWidget(), TestButton()],
-      )));
+      home: Scaffold(
+          body: Row(
+            children: <Widget>[InteractorWidget(), TestButton()],
+          )));
 }
 
 void main() {
@@ -61,7 +61,7 @@ void main() {
 
     expect(find.text("None"), findsOneWidget);
 
-    await tester.tap(find.byType(RaisedButton));
+    await tester.tap(find.byType(ElevatedButton));
 
     await tester.pump();
 

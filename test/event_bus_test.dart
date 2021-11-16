@@ -7,7 +7,7 @@ void main() {
     test("should publish and respond to event", () {
       final eventBus = EventBus(sync: true);
 
-      String capturedEvent;
+      late String capturedEvent;
 
       eventBus.respond<String>((String event) {
         capturedEvent = event;
@@ -21,8 +21,8 @@ void main() {
     test("should respond to event by type", () {
       final eventBus = EventBus(sync: true);
 
-      List<String> capturedStrings = List();
-      List<int> capturedNumbers = List();
+      final capturedStrings = <String>[];
+      final capturedNumbers = <int>[];
 
       eventBus.respond<String>((String event) {
         capturedStrings.add(event);
@@ -45,7 +45,7 @@ void main() {
     test("should not recieve event after disposed subscription", () {
       final eventBus = EventBus(sync: true);
 
-      List<String> capturedEvents = List();
+      final capturedEvents = <String>[];
 
       final subscription = eventBus.respond<String>((String event) {
         capturedEvents.add(event);
