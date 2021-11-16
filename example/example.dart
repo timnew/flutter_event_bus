@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) => EventBusWidget(
-          child: MaterialApp(
+      child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -43,23 +43,23 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class InreaseCounterEvent {}
+class IncreaseCounterEvent {}
 
 class IncreaseCounterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => FloatingActionButton(
-        onPressed: () {
-          EventBus.publishTo(context, InreaseCounterEvent());
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      );
+    onPressed: () {
+      EventBus.publishTo(context, IncreaseCounterEvent());
+    },
+    tooltip: 'Increment',
+    child: Icon(Icons.add),
+  );
 }
 
 class _MyHomePageState extends Interactor<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter(InreaseCounterEvent event) {
+  void _incrementCounter(IncreaseCounterEvent event) {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -109,17 +109,17 @@ class _MyHomePageState extends Interactor<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton:
-          IncreaseCounterButton(), // This trailing comma makes auto-formatting nicer for build methods.
+      IncreaseCounterButton(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
   @override
   Subscription subscribeEvents(EventBus eventBus) =>
-      eventBus.respond<InreaseCounterEvent>(_incrementCounter);
+      eventBus.respond<IncreaseCounterEvent>(_incrementCounter);
 }

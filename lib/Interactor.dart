@@ -24,7 +24,7 @@ import 'EventBus.dart';
 /// }
 /// ```
 abstract class Interactor<T extends StatefulWidget> extends State<T> {
-  Subscription _subscription;
+  Subscription? _subscription;
 
   /// [EventBus] provided by ancestor [EventBusWidget]
   /// Cannot not be accessed in [initState] or [dispose], as state has not yet or had been removed from element tree.
@@ -42,7 +42,7 @@ abstract class Interactor<T extends StatefulWidget> extends State<T> {
 
   @override
   void dispose() {
-    _subscription.dispose();
+    _subscription?.dispose();
 
     super.dispose();
   }

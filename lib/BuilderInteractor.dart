@@ -4,7 +4,7 @@ import 'Interactor.dart';
 abstract class BuilderInteractorWidget extends StatefulWidget {
   final WidgetBuilder childBuilder;
 
-  const BuilderInteractorWidget({Key key, @required this.childBuilder})
+  const BuilderInteractorWidget({Key? key, required this.childBuilder})
       : super(key: key);
 }
 
