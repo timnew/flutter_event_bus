@@ -53,7 +53,9 @@ final subscription = eventBus
   .respond<EventA>(responderA) // Subscribe to EventA
   .respond<EventB>(responderB) // Subscribe to EventB
   .respond<EventC>(responderC) // Subscribe to EventC
-  .respond(genericResponder); // Subscribe to EventA EventB EventC and any other event on event bus
+  .respond<EventA?>(responderNullableA) // Subscribe to EventA and any null
+  .respond<EventB?>(responderNullableB) // Subscribe to EventB and any null
+  .respond(genericResponder); // Subscribe to EventA EventB EventC null and any other event on event bus
 
   // Generic Responder could be useful for monitoring, logging or diagnosis purpose, probably will be hardly used to take action to event
 

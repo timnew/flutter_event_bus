@@ -18,15 +18,15 @@ class EventBus {
   EventBus.customController(this._streamController);
 
   /// Create an event bus with default dart StreamController.
-  /// You can use [sync] to indentify whether the event bus should be sync or async, by default it is async.
+  /// You can use [sync] to identify whether the event bus should be sync or async, by default it is async.
   /// For more detail, check [Stream] document.
   EventBus({bool sync = false})
-      : _streamController = StreamController.broadcast(sync: sync);
+      : _streamController = StreamController<dynamic>.broadcast(sync: sync);
 
   Stream get _stream => _streamController.stream;
 
   /// Publish an event to all corresponding responders via EventBus
-  void publish(event) {
+  void publish(dynamic event) {
     _streamController.add(event);
   }
 
@@ -58,7 +58,7 @@ class EventBus {
   /// ```
   /// EventBus.of(context).publish(event);
   /// ```
-  static void publishTo(BuildContext context, event) =>
+  static void publishTo(BuildContext context, dynamic event) =>
       of(context).publish(event);
 }
 
@@ -88,7 +88,7 @@ class EventBusWidget extends InheritedWidget {
   /// is `synchronized` or `asynchronized`, default to `asynchronized`.
   /// If [eventBus] is given, [sync] is ignored
   ///
-  /// The [eventBus] param chould be useful if you want to access eventBus from widget who hold [EventBusWidget],
+  /// The [eventBus] param should be useful if you want to access eventBus from widget who hold [EventBusWidget],
   /// or you are using custom [StreamController] in Event Bus.
   EventBusWidget(
       {Key? key, required Widget child, EventBus? eventBus, bool sync = false})
@@ -99,7 +99,7 @@ class EventBusWidget extends InheritedWidget {
   bool updateShouldNotify(EventBusWidget oldWidget) =>
       eventBus != oldWidget.eventBus;
 
-  /// Find the closeset [EventBusWidget] from ancester tree.
+  /// Find the closest [EventBusWidget] from ancestor tree.
   static EventBusWidget of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<EventBusWidget>()!;
 }
